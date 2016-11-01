@@ -29,6 +29,15 @@
                  $("#test2_out").html("Hello " + data.name + ". Your age is " + data.age);
               });           
           });
+          $("button[test3]").on("click", function(event) {
+              var api = "http://api.geonames.org/findNearbyPostalCodesJSON?postalcode=02215&country=US&radius=10&username=student601";
+              $.getJSON(api, function(data) {
+                  for(var i = 0; i < data.postalCodes.length;i++) {
+                      $("#test3_out").append("<b>" + data.postalCodes[i].placeName +
+                                        "</b>, <span>" + data.postalCodes[i].postalCode + "</span><br>");
+                  }
+              });
+          });    
       });
   </script>
  </head>
@@ -38,6 +47,9 @@
     <p id="test1_out"></p> 
     <h1>JSON test</h1>
     <button class="pure-button pure-button-primary" test2>Test 2</button> 
-    <p id="test2_out"></p>      
+    <p id="test2_out"></p>  
+    <h1>JSON Fetch</h1>
+    <button class="pure-button pure-button-primary" test3>Test 3</button>
+    <p id="test3_out"></p>    
 </body>
 </html>

@@ -22,12 +22,22 @@
                  $("#test1_out").html("Hello, " + data);
               });           
           });
+
+          $("button[test2]").on("click", function(event) {
+              var parameters = { "name": "JSON" }
+              $.get("/json", parameters, function(data) {
+                 $("#test2_out").html("Hello " + data.name + ". Your age is " + data.age);
+              });           
+          });
       });
   </script>
  </head>
 <body>
     <h1>First test</h1>
     <button class="pure-button pure-button-primary" test1>Test 1</button>
-    <p id="test1_out"></p>        
+    <p id="test1_out"></p> 
+    <h1>JSON test</h1>
+    <button class="pure-button pure-button-primary" test2>Test 2</button> 
+    <p id="test2_out"></p>      
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "Using Node with Express with jQuery",
+  "name": "ExpressSimple",
   "version": "1.0.0",
   "description": "A basic web server that uses jQuery/Ajax",
   "main": "index.js",
